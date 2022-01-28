@@ -1,1 +1,1 @@
-[another link!](youtube.com)
+[another link!]youtube.com
