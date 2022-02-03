@@ -19,7 +19,13 @@ public class MarkdownParseTest {
     public void getLinksTester() throws IOException{
         Path fileName = Path.of("/Users/heikoabadjian/Documents/GitHub/markdown-parse/test-file.md");
 	    String contents = Files.readString(fileName);
-        ArrayList<String> links = MarkdownParse.getLinks(contents);
         assertEquals(MarkdownParse.getLinks(contents), new ArrayList<String>(List.of("https://something.com", "some-page.html")));
+    }
+
+    @Test
+    public void failTest() throws IOException{
+        Path fileName = Path.of("/Users/heikoabadjian/Documents/GitHub/markdown-parse/test-file.md");
+	    String contents = Files.readString(fileName);
+        assertEquals(MarkdownParse.getLinks(contents), new ArrayList<String>(List.of("fail test", "some-page.html")));
     }
 }
